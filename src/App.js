@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import {Route,Routes,BrowserRouter} from 'react-router-dom';
+import Itemcard from './Components/ItemCard';
+import Admin from './Components/AdminDash';
+import AddUser from './Components/AddUser';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/itemcard' element={<Itemcard></Itemcard>}/>
+      <Route path='/admindash' element={<Admin></Admin>}/>
+      <Route path='/adduser' element={<AddUser></AddUser>}/>
+    </Routes>
+    </BrowserRouter>
+   
+   </>
   );
 }
 
